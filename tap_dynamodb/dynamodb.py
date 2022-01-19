@@ -46,7 +46,8 @@ def setup_aws_client(config):
     session = Session()
     session.set_credentials(
         access_key=config['access_key'],
-        secret_key=config['secret_key']
+        secret_key=config['secret_key'],
+        token=config['session_token']
     )
     fetcher = AssumeRoleCredentialFetcher(
         session.create_client,
